@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ko_KR">
+<head>
+	<title>async</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			font-family: "Poppins","Noto Sans KR", sans-serif;
+		}
+		.navbar{
+			background-color: #0a0a0a;
+			width: 100%;
+			height: 80px;
+		}
+		.navbar a img{
+			margin-left: 24px;
+			vertical-align: middle;
+			margin-top: 16px;
+			margin-bottom: 16px;
+		}
+		.menu{
+			float: right;
+			list-style: none;
+			padding: 0;
+			margin-right: 24px;
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-left: 0;
+			}
+		.menu li{
+			float: left;
+			margin-left: 32px;
+			line-height: 80px;
+		}
+		.menu li a{
+			text-decoration: none;
+			color: #dedede;
+		}
+		.menu li a:hover{
+			color: #fff;
+		}
+		.about{
+			font-weight: 700;
+			color: #fff;
+		}
+		.topic{
+			text-align: center;
+			width: 100%
+			height: 240px;
+			background-color: #F8F9FA;
+			border-top: 0.5px solid #E0E4E6;
+			border-bottom: 0.5px solid #E0E4E6;
+		}
+		.topic h5{
+			color:#A8A8A8;
+			padding-top: 32px;
+			margin-bottom: 16px;
+			font-weight: 400;
+		}
+		.topic h1{
+			color: black;
+			font-size: 64px;
+			margin-top: 16px;
+			padding-bottom: 32px;
+		}
+		.info{
+			background-color: #F8F9FA;
+			padding-right: 120px;
+			padding-left: 120px;
+			padding-top: 48px;
+			padding-bottom: 48px;
+		}
+		.album-1{
+			background-color: #E0E4E6;
+			width: 100%;
+			height: 496px;
+		}
+		.album-1 img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.info h5{
+			font-size: 20px;
+			margin-bottom: 28px;
+		}
+		.info p{
+			font-size: 14px;
+			font-weight: 400;
+		}
+		.topic-2{
+			text-align: center;
+			width: 100%
+			height: 240px;
+			background-color: #fff;
+		}
+		.topic-2 h5{
+			color:#A8A8A8
+			font-size: 48px;
+			padding-top: 32px;
+			margin-bottom: 16px;
+			font-weight: 400;
+		}
+		.topic-2 h1{
+			color: black;
+			font-size: 64px;
+			margin-top: 16px;
+			padding-bottom: 32px;
+		}
+		.music{
+			background-color: #fff;
+			width: 100%;
+			height:1160px;
+		}
+
+		.music-word{
+			width: 1280px;
+			margin-left: auto;
+			margin-right: auto;
+			border-bottom: 0.5px solid #e1e3e5;
+			padding-bottom: 40px;
+		}
+
+		.card{
+			width: 400px;
+			height: 200px;
+			background-color: #F8F9FA;
+			float: left;
+			margin: 8px 8px;
+		}
+		.card:hover{
+			box-shadow:  0px 0px 2px rgba(0,0,0,0.65);
+			transition: .65s;
+		}
+
+		.card-body{
+			color: #333;
+		}
+		.card-body h5{
+			font-size: 36px;
+			font-weight: 700;
+			color: #333;
+			text-align: center;
+		}
+		.card-body p{
+			font-size: 20px;
+			font-weight: 400;
+			padding-top: 16px;
+			color:#333;
+			text-align: center;
+			margin-bottom: 4px;
+		}
+		.card-body button{
+			border: 0.24px solid #333333;
+			border-radius: 80px;
+			color: #333;
+			width: 32px;
+			height: 32px;
+			background-image: url(https://i.postimg.cc/d0YVMbxM/1-1.png);
+			background-position: center center;
+			background-size: cover;
+			margin-left: 16px;
+			float: left;
+			transition: 0.5s ease-in-out;
+			opacity: 80%;
+
+		}
+		.card-body button:hover{
+			background-color: #333;
+			border: 0.24px solid #F8F9FA;
+			text-decoration: none;
+			color: #f8f9fa;
+			background-image: url(https://i.postimg.cc/V6Qw0ptf/1-1.png);
+			background-position: center center;
+			background-size: cover;
+		}
+		.twotwo{
+			background-image: url(https://i.postimg.cc/43Wk8jCQ/1.png);
+			background-position: center center;
+			background-size: cover;
+			width: 28px;
+			height: 28px;
+			float: right;
+			margin-right: 12px;
+			opacity: 60%;
+		}
+		.twotwo:hover{
+			opacity: 100%;
+		}
+		.helper{
+			height: 25%;
+     		display: inline-block;
+     		vertical-align: middle;
+		}
+		.clearfix{
+			clear: both;
+		}	
+		.helper-1{
+			height: 100%;
+     		display: inline-block;
+     		vertical-align: middle;
+		}
+		
+		.more{
+			width: 1280px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 400px;
+			background-color: #fff;
+		}
+		.more h2{
+			color: #333;
+			font-size: 28px;
+			margin-top: 0px;
+			margin-bottom: 32px;
+			float: left;
+		}
+		.next-button{
+			padding-top: 8px;
+			float: right;
+		}
+		.more-album{
+			width: 180px;
+			height: 280px;
+			border: 0.5px solid #e1e3e5;
+			background-color: #F8F9FA;
+			float: left;
+			margin-right: 76px;
+		}
+		.more-album-word{
+			text-align: center;
+		}
+		.more-album-word h5{
+			font-size: 16px;
+			font-weight: 400;
+			padding-top:8px;
+			margin-bottom: 8px;
+			margin-top: 8px;
+		}
+		.more-album-word p{
+			font-size: 10px;
+			padding-bottom: 8px;
+			color:#A8A8A8;
+			font-weight: 300;
+
+		}
+
+		.footer{
+			background-color: #333333;
+			width: 100%
+			height: 480px;
+			color: #fff;
+		}
+		.foo-1 img{
+			margin-left: 48px;
+			margin-top: 36px;
+			margin-bottom : 6px;
+		}
+		.foo-1 h3{
+			font-size: 32px;
+			margin-top : 6px;
+			margin-bottom: 12px;
+			margin-left: 48px;
+		}
+		.foo-1 h5{
+			font-size: 16px;
+			margin-left: 48px;
+			margin-bottom: 12px;
+			font-weight: 500;
+		}
+		.foo-1 p{
+			margin-left: 48px;
+			font-size: 10px;
+			padding-bottom: 36px;
+		}
+
+		/*태블릿*/
+
+		@media (max-width: 1024px) and (min-width:768px){
+			.topic{
+			text-align: center;
+			width: 100%
+			height: 240px;
+			background-color: #F8F9FA;
+			border-top: 0.5px solid #E0E4E6;
+			border-bottom: 0.5px solid #E0E4E6;
+		}
+		.topic h5{
+			color:#A8A8A8;
+			padding-top: 32px;
+			font-weight: 400;
+		}
+		.topic h1{
+			color: #000;
+			font-size: 56px;
+			padding-bottom: 32px;
+			margin-top: 8px;
+		}
+		.info{
+			background-color: #F8F9FA;
+			padding-right: 80px;
+			padding-left: 80px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		.album-1{
+			background-color: #E0E4E6;
+			width: 100%;
+			height: 400px;
+		}
+		.album-1 img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 400px;
+		}
+		.info h5{
+			font-size: 20px;
+			margin-bottom: 28px;
+		}
+		.info p{
+			font-size: 14px;
+			font-weight: 400;
+		}
+		.topic-2{
+			text-align: center;
+			width: 100%
+			height: 200px;
+			background-color: #fff;
+		}
+		.topic-2 h5{
+			color:#A8A8A8
+			font-size: 48px;
+			padding-top: 32px;
+			margin-bottom: 16px;
+			font-weight: 400;
+
+		}
+		.topic-2 h1{
+			color: black;
+			font-size: 56px;
+			padding-bottom: 32px;
+			margin-top: 8px;
+		}
+		.music{
+			background-color: #fff;
+			width: 100%;
+			height:1600px;
+		}
+
+		.music-word{
+			width: 864px;
+			margin-left: auto;
+			margin-right: auto;
+			border-bottom: 0.5px solid #e1e3e5;
+			padding-bottom: 40px;
+		}
+
+		.card{
+			width: 416px;
+			height: 200px;
+			background-color: #F8F9FA;
+			float: left;
+			margin: 8px 8px;
+		}
+		.card:hover{
+			box-shadow:  0px 0px 2px rgba(0,0,0,0.65);
+			transition: .65s;
+		}
+
+		.card-body{
+			color: #333;
+		}
+		.card-body h5{
+			font-size: 36px;
+			font-weight: 700;
+			color: #333;
+			text-align: center;
+		}
+		.card-body p{
+			font-size: 20px;
+			font-weight: 400;
+			padding-top: 16px;
+			color:#333;
+			text-align: center;
+			margin-bottom: 4px;
+		}
+		.card-body button{
+			border: 0.24px solid #333333;
+			border-radius: 80px;
+			color: #333;
+			width: 32px;
+			height: 32px;
+			background-image: url(https://i.postimg.cc/d0YVMbxM/1-1.png);
+			background-position: center center;
+			background-size: cover;
+			margin-left: 16px;
+			float: left;
+			transition: 0.5s ease-in-out;
+			opacity: 80%;
+
+		}
+		.card-body button:hover{
+			background-color: #333;
+			border: 0.24px solid #F8F9FA;
+			text-decoration: none;
+			color: #f8f9fa;
+			background-image: url(https://i.postimg.cc/V6Qw0ptf/1-1.png);
+			background-position: center center;
+			background-size: cover;
+		}
+		.twotwo{
+			background-image: url(https://i.postimg.cc/43Wk8jCQ/1.png);
+			background-position: center center;
+			background-size: cover;
+			width: 28px;
+			height: 28px;
+			float: right;
+			margin-right: 12px;
+			opacity: 60%;
+		}
+		.twotwo:hover{
+			opacity: 100%;
+		}
+		.helper{
+			height: 25%;
+     		display: inline-block;
+     		vertical-align: middle;
+		}
+		.clearfix{
+			clear: both;
+		}	
+
+		.helper-1{
+			height: 100%;
+     		display: inline-block;
+     		vertical-align: middle;
+		}
+		.more{
+			width: 864px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 720px;
+			background-color: #fff;
+		}
+		.more h2{
+			color: #333;
+			font-size: 28px;
+			margin-top: 0px;
+			margin-bottom: 16px;
+			float: left;
+			margin-left: 24px;
+			margin-right: 24px;
+		}
+		.next-button{
+			padding-top: 8px;
+			float: right;
+		}
+		.more-album{
+			width: 160px;
+			height: 240px;
+			border: 0.5px solid #e1e3e5;
+			background-color: #F8F9FA;
+			margin-right: 24px;
+			margin-top: 48px;
+			float: left;
+			margin-left: 24px;
+		}
+		.more-album img{
+			width: 160px;
+			height: 160px;
+		}
+		.more-album-word{
+			text-align: center;
+		}
+		.more-album-word h5{
+			font-size: 14px;
+			font-weight: 400;
+			padding-top:2px;
+			margin-bottom: 6px;
+			margin-top: 6px;
+
+		}
+		.more-album-word p{
+			font-size: 10px;
+			padding-bottom: 8px;
+			color:#A8A8A8;
+			font-weight: 300;
+		}
+		.footer{
+			background-color: #333333;
+			width: 100%
+			height: 480px;
+			color: #fff;
+		}
+		.foo-1 img{
+			margin-left: 48px;
+			margin-top: 36px;
+			margin-bottom : 6px;
+		}
+		.foo-1 h3{
+			font-size: 32px;
+			margin-top : 6px;
+			margin-bottom: 12px;
+			margin-left: 48px;
+		}
+		.foo-1 h5{
+			font-size: 16px;
+			margin-left: 48px;
+			margin-bottom: 12px;
+			font-weight: 500;
+		}
+		.foo-1 p{
+			margin-left: 48px;
+			font-size: 10px;
+			padding-bottom: 36px;
+		}
+		}
+
+		/*mobile*/
+		@media (max-width: 767px){
+			.topic{
+			text-align: center;
+			width: 100%
+			height: 160px;
+			background-color: #F8F9FA;
+		}
+		.topic h5{
+			color:#A8A8A8;
+			padding-top: 32px;
+			font-weight: 400;
+		}
+		.topic h1{
+			color: #000;
+			font-size: 48px;
+			padding-bottom: 32px;
+			margin-top: 8px;
+		}
+		.info{
+			background-color: #F8F9FA;
+			padding-right: 40px;
+			padding-left: 40px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		.album-1{
+			background-color: #E0E4E6;
+			width: 100%;
+			height: 360px;
+		}
+		.album-1 img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 360px;
+		}
+		.info h5{
+			font-size: 16px;
+			margin-bottom: 28px;
+		}
+		.info p{
+			font-size: 12px;
+			font-weight: 400;
+		}
+		.topic-2{
+			text-align: center;
+			width: 100%
+			height: 200px;
+			background-color: #fff;
+		}
+		.topic-2 h5{
+			color:#A8A8A8;
+			padding-top: 32px;
+			margin-bottom: 16px;
+			font-weight: 400;
+		}
+		.topic-2 h1{
+			color: black;
+			font-size: 48px;
+			padding-bottom: 32px;
+			margin-top: 8px;
+		}
+		.music{
+			background-color: #fff;
+			width: 100%;
+			height:3200px;
+		}
+
+		.music-word{
+			border-bottom: 0.5px solid #e1e3e5;
+			padding-bottom: 40px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 520px;
+		}
+
+		.card{
+			width: 520px;
+			height:200px;
+			background-color: #F8F9FA;
+			float: left;
+			margin: 8px 8px;
+		}
+		.card:hover{
+			box-shadow:  0px 0px 2px rgba(0,0,0,0.65);
+			transition: .65s;
+		}
+
+		.card-body{
+			color: #333;
+		}
+		.card-body h5{
+			font-size: 36px;
+			font-weight: 700;
+			color: #333;
+			text-align: center;
+		}
+		.card-body p{
+			font-size: 20px;
+			font-weight: 400;
+			padding-top: 16px;
+			color:#333;
+			text-align: center;
+			margin-bottom: 4px;
+		}
+		.card-body button{
+			border: 0.24px solid #333333;
+			border-radius: 80px;
+			color: #333;
+			width: 32px;
+			height: 32px;
+			background-image: url(https://i.postimg.cc/d0YVMbxM/1-1.png);
+			background-position: center center;
+			background-size: cover;
+			margin-left: 16px;
+			float: left;
+			transition: 0.5s ease-in-out;
+			opacity: 80%;
+
+		}
+		.card-body button:hover{
+			background-color: #333;
+			border: 0.24px solid #F8F9FA;
+			text-decoration: none;
+			color: #f8f9fa;
+			background-image: url(https://i.postimg.cc/V6Qw0ptf/1-1.png);
+			background-position: center center;
+			background-size: cover;
+		}
+		.twotwo{
+			background-image: url(https://i.postimg.cc/43Wk8jCQ/1.png);
+			background-position: center center;
+			background-size: cover;
+			width: 28px;
+			height: 28px;
+			float: right;
+			margin-right: 12px;
+			opacity: 60%;
+		}
+		.twotwo:hover{
+			opacity: 100%;
+		}
+		.helper{
+			height: 25%;
+     		display: inline-block;
+     		vertical-align: middle;
+		}
+		.clearfix{
+			clear: both;
+		}	
+		.helper-1{
+			height: 100%;
+     		display: inline-block;
+     		vertical-align: middle;
+		}
+		.more{
+			width: 520px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 1020px;
+			background-color: #fff;
+		}
+		.more h2{
+			color: #333;
+			font-size: 28px;
+			margin-top: 0px;
+			margin-bottom: 16px;
+			float: left;
+			
+		}
+		.next-button{
+			padding-top: 8px;
+			float: right;
+			margin-right: 20px;
+		}
+		.more-album{
+			width: 160px;
+			height: 240px;
+			border: 0.5px solid #e1e3e5;
+			background-color: #F8F9FA;
+			margin-left: : 20px;
+			margin-top: 48px;
+			float: left;
+			
+
+		}
+		.more-album img{
+			width: 160px;
+			height: 160px;
+
+		}
+		.more-album-word{
+			text-align: center;
+		}
+		.more-album-word h5{
+			font-size: 14px;
+			font-weight: 400;
+			padding-top:2px;
+			margin-bottom: 6px;
+			margin-top: 6px;
+		}
+		.more-album-word p{
+			font-size: 10px;
+			padding-bottom: 8px;
+			color:#A8A8A8;
+			font-weight: 300;
+		}
+		.footer{
+			background-color: #333333;
+			width: 100%
+			height: 480px;
+			color: #fff;
+		}
+		.foo-1 img{
+			margin-left: 48px;
+			margin-top: 36px;
+			margin-bottom : 6px;
+		}
+		.foo-1 h3{
+			font-size: 32px;
+			margin-top : 6px;
+			margin-bottom: 12px;
+			margin-left: 48px;
+		}
+		.foo-1 h5{
+			font-size: 16px;
+			margin-left: 48px;
+			margin-bottom: 12px;
+			font-weight: 500;
+		}
+		.foo-1 p{
+			margin-left: 48px;
+			font-size: 10px;
+			padding-bottom: 36px;
+		}
+		}
+
+
+	</style>
+</head>
+<body>
+	<!--navbar-->
+	<div class="navbar">
+			<a href="#">
+				<img src="https://i.postimg.cc/cLCWN19h/image.png" width="50px" height="50px" alt="logo"></a>
+
+		<ul class="menu">
+			<li><a href="#">Home</a></li>
+			<li class="about"><a href="#">Discography</a></li>
+		</ul>
+	</div>
+
+
+	<!--container-->
+	<div class="container">
+		<div class="topic">
+			<h5>2017</h5>
+			<h1>Async</h1>
+		</div>
+
+		<div class="album-1">
+			<img src="https://i.postimg.cc/pLjD8kKy/image.png" height="496px">
+		</div>
+
+		<div class="info">
+			<h5>2017년 4월 28일, 전세계 동시 발매!</h5>
+			<p>위대한 작곡가이자 뮤지션 사카모토 류이치...<br>가장 개인적인 “음/음악”을 담아낸 8년 만의 첫 스튜디오 앨범...<br><br>
+
+			[The Last Emperor], [Merry Christmas Mr. Lawrence]를 비롯한 수많은 걸작들을 작곡한 세계적인 작곡가이자 피아니스트, 그리고 옐로우 뮤직 오케스트라의 한 사람으로 신스-팝이란 장르에 큰 영향을 남겼던 거장 사카모토 류이치. 사카모토 류이치는 데이빗 실비언, 이기 팝, 토니 윌리엄스, 자키스 모렐렌바움 등 세계적인 거장들과도 협연하며 독창적인 성과를 거둔 바 있다. <br><br>[async]는 사카모토 류이치가 8년만에 선보이는 첫 스튜디오 앨범이다. 암으로 오랜 시간 투병하며 발견한 열정과 창조에 대한 새로운 에너지로 만들어낸 사카모토 류이치의 가장 개인적인 음악이 담겨있다. 이 앨범 [async]는 바로 “그런데 나는 지금, 어떤 ‘음/음악’이 듣고 싶은 걸까.”라는 질문에서 시작하여 몇 년동안 사카모토 류이치가 자기 자신에게 물어온 대답을 담아내고 있다. ‘가공의 타르코프스키 영화의 사운드트랙’라는 컨셉으로 아날로그 신서사이저에서, 피아노 그리고 다양한 사물과 장소에서 가져온 소리가 함께 하는, 그야말로 음악적 놀라움으로 가득한 작품이다.</p>
+		</div>
+
+
+		<div class="topic-2">
+			<h5>async</h5>
+			<h1>Track</h1>
+		</div>
+
+		<div class="music">
+			<div class="music-word">
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>01</h5>
+				    <p>andata</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>02</h5>
+				    <p>disintegration</p>
+				   <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>03</h5>
+				    <p>solari</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>04</h5>
+				    <p>ZURE</p>
+				   <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>05</h5>
+				    <p>walker</p>
+				   <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>06</h5>
+				    <p>stakra</p>
+				   <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>07</h5>
+				    <p>ubi</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>08</h5>
+				    <p>fullmoon</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>09</h5>
+				    <p>async</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>10</h5>
+				    <p>tri</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>11</h5>
+				    <p>life,life</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>12</h5>
+				    <p>honji</p>
+				    <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>13</h5>
+				    <p>ff</p>
+				   <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+
+				<div class="card">
+				  <div class="helper"></div>
+				  <div class="card-body">
+				    <h5>14</h5>
+				    <p>garden</p>
+				   <button class="oneone"></button>
+				    <div class="twotwo"></div>
+				  </div> 
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+			<div class="more">
+				<h2>함께 들으면 좋은 앨범</h2>
+				<div class="next-button">
+					<button class="one"><</button>
+					<button class="two">></button>
+				</div>
+				<div class="clearfix"></div>
+				<div class="more-album">
+					<img src="https://i.postimg.cc/0QpG5Ds9/4-summvs-2011.jpg" width="180px" height="180px" alt="more-album">
+					<div class="more-album-word">
+						<h5>Summvs</h5>
+						<p>Ryūichi Sakamoto<br>2011.05.09</p>
+			</div>
+		</div>
+
+		<div class="more-album">
+					<img src="https://i.postimg.cc/sgNCKRSk/3-flumina-2011.jpg" width="180px" height="180px" alt="more-album">
+					<div class="more-album-word">
+						<h5>Flumina</h5>
+						<p>Ryūichi Sakamoto<br>2011.08.03</p>
+			</div>
+		</div>
+
+		<div class="more-album">
+					<img src="https://i.postimg.cc/cL8s8HtK/2-three-2012.jpg" width="180px" height="180px" alt="more-album">
+					<div class="more-album-word">
+						<h5>Three</h5>
+						<p>Ryūichi Sakamoto<br>2012.10.17</p>
+			</div>
+		</div>
+
+		<div class="more-album">
+					<img src="https://i.postimg.cc/Hn1gXGRQ/13-Sweet-Revenge-1994.jpg" width="180px" height="180px" alt="more-album">
+					<div class="more-album-word">
+						<h5>Sweet Revenge</h5>
+						<p>Ryūichi Sakamoto<br>1994.06.17</p>
+			</div>
+		</div>
+
+			<div class="more-album">
+					<img src="https://i.postimg.cc/sgNCKRSk/3-flumina-2011.jpg" width="180px" height="180px" alt="more-album">
+					<div class="more-album-word">
+						<h5>Flumina</h5>
+						<p>Ryūichi Sakamoto<br>2011.08.03</p>
+					</div>
+
+			</div>
+		<div class="clearfix"></div>
+	</div>
+
+
+
+	<!--footer-->
+	<div class="footer">
+		<div class="foo-1">
+			<img class="logo" src="https://i.postimg.cc/cLCWN19h/image.png" width="50px" height="50px" alt="logo">
+			<h3>STUDIO SAKAMOTO</h3>
+			<h5>pianist & producer</h5>
+			<p>Copyright © 2020 Studio Sakamoto Corp. All rights reserved.
+			</p>
+		</div>
+
+</body>
+</html>

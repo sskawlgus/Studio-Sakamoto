@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Discography</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			font-family: "Poppins", sans-serif;
+			box-sizing: border-box;
+			margin: 0;
+		}
+		.navbar{
+			background-color: #0a0a0a;
+			width: 100%;
+			height: 80px;
+		}
+		.navbar a img{
+			margin-left: 48px;
+			vertical-align: middle;
+			margin-top: 16px;
+			margin-bottom: 16px;
+		}
+		.menu{
+			float: right;
+			list-style: none;
+			padding: 0;
+			margin-right: 24px;
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-left: 0;
+			}
+		.menu li{
+			float: left;
+			margin-left: 32px;
+			line-height: 80px;
+		}
+		.menu li a{
+			text-decoration: none;
+			color: #dedede;
+		}
+		.menu li a:hover{
+			color: #fff;
+		}
+		.about{
+			font-weight: 700;
+			color: #fff;
+		}
+		.container{
+			background-color: #F8F9FA;
+			width: 100%;
+		}
+		.vivi{
+			text-align: center;
+			width: 100%
+			height: 240px;
+			background-color: #fff;
+		}
+		.vivi h5{
+			color:#A8A8A8;
+			padding-top: 32px;
+			font-weight: 400;
+		}
+		.vivi h1{
+			color: black;
+			font-size: 64px;
+			margin-top: 16px;
+			padding-bottom: 32px;
+		}
+		.container a{
+			float: left;
+			text-align: center;
+			text-decoration: none;
+			margin-left: 8px;
+			margin-right: 8px;
+		}
+		.box{
+			width: 304px;
+			height: 304px;
+			overflow: hidden;
+			margin: 0 auto;
+			border: 0.5px solid #e1e3e5;
+
+		}
+		.box img{
+			object-fit:cover;    
+			transition: transform .5s;
+			transform: scale(1.0);
+			opacity: 1.0;
+		}
+		.box img:hover{
+			transform: scale(1.2);
+			transition: transform .65s;
+			background-color: white;
+			opacity:0.8!important;
+		}
+
+		.name{
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			text-decoration: none;
+			color:#2C2A29;
+			font-weight: 500;
+			text-transform: capitalize;
+		}
+		.bitton{
+			margin-bottom: 80px;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid #2C2A29;
+			padding: 8px 16px;
+			color: #333333;
+			cursor: pointer;
+			font-size: 12px;
+		}
+		.bitton:hover{
+			background-color: #2C2A29;
+			color: #fff;
+			transition: 0.5s ease-in-out;
+		}
+		.pro{
+			padding-top:64px;
+			width: 1280px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 120px;
+			
+		}
+		.clearfix{
+			clear: both;
+		}	
+		.footer{
+			background-color: #333333;
+			width: 100%
+			height: 480px;
+			color: #fff;
+		}
+		.foo-1 img{
+			margin-left: 48px;
+			margin-top: 36px;
+			margin-bottom : 6px;
+		}
+		.foo-1 h3{
+			font-size: 32px;
+			margin-top : 6px;
+			margin-bottom: 12px;
+			margin-left: 48px;
+		}
+		.foo-1 h5{
+			font-size: 16px;
+			margin-left: 48px;
+			margin-bottom: 12px;
+			font-weight: 500;
+		}
+		.foo-1 p{
+			margin-left: 48px;
+			font-size: 10px;
+			padding-bottom: 36px;
+		}
+
+		/*태블릿*/
+
+
+		@media (max-width: 1024px) and (min-width:768px){
+			.container{
+			background-color: #F8F9FA;
+		}
+		.vivi{
+			text-align: center;
+			width: 100%
+			height: 200px;
+			background-color: #fff;
+		}
+		.vivi h5{
+			color:#A8A8A8;
+			padding-top: 32px;
+			font-weight: 400;
+		}
+		.vivi h1{
+			color: black;
+			font-size: 56px;
+			margin-top: 8px;
+			padding-bottom: 32px;
+		}
+		.container a{
+			float: left;
+			text-align: center;
+			text-decoration: none;
+			margin-left: 8px;
+			margin-right: 8px;
+		}
+		.box{
+			width: 272px;
+			height: 272px;
+			overflow: hidden;
+			margin: 0 auto;
+			border: 0.5px solid #e1e3e5;
+
+		}
+		.box img{
+			object-fit:cover;    
+			transition: transform .5s;
+			transform: scale(1.0);
+			opacity: 1.0;
+		}
+		.box img:hover{
+			transform: scale(1.2);
+			transition: transform .65s;
+			background-color: white;
+			opacity:0.8!important;
+		}
+
+		.name{
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			text-decoration: none;
+			color:#2C2A29;
+			font-weight: 500;
+			text-transform: capitalize;
+		}
+		.bitton{
+			margin-bottom: 80px;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid #2C2A29;
+			padding: 8px 16px;
+			color: #333;
+			cursor: pointer;
+			font-size: 12px;
+		}
+		.bitton:hover{
+			background-color: #2C2A29;
+			color: #fff;
+			transition: 0.5s ease-in-out;
+		}
+		.pro{
+			padding-top:64px;
+			width: 864px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 120px;
+		}
+		.clearfix{
+			clear: both;
+		}	
+		.footer{
+			background-color: #333333;
+			width: 100%
+			height: 480px;
+			color: #fff;
+		}
+		.foo-1 img{
+			margin-left: 48px;
+			margin-top: 36px;
+			margin-bottom : 6px;
+		}
+		.foo-1 h3{
+			font-size: 28px;
+			margin-top : 6px;
+			margin-bottom: 12px;
+			margin-left: 48px;
+		}
+		.foo-1 h5{
+			font-size: 16px;
+			margin-left: 48px;
+			margin-bottom: 12px;
+			font-weight: 500;
+		}
+		.foo-1 p{
+			margin-left: 48px;
+			font-size: 10px;
+			padding-bottom: 36px;
+		}
+
+		}
+		
+		/*mobile*/
+
+		@media (max-width: 767px){
+		.container{
+			background-color: #F8F9FA;
+		}
+		.vivi{
+			text-align: center;
+			width: 100%
+			height: 160px;
+			background-color: #fff;
+		}
+		.vivi h5{
+			color:#A8A8A8;
+			padding-top: 32px;
+			font-weight: 400;
+		}
+		.vivi h1{
+			color: black;
+			font-size: 48px;
+			margin-top: 8px;
+			padding-bottom: 32px;
+		}
+		.container a{
+			float: left;
+			text-align: center;
+			text-decoration: none;
+			margin-left: 8px;
+			margin-right: 8px;
+		}
+		.box{
+			width: 240px;
+			height: 240px;
+			overflow: hidden;
+			margin: 0 auto;
+			border: 0.5px solid #e1e3e5;
+
+		}
+		.box img{
+			object-fit:cover;    
+			transition: transform .5s;
+			transform: scale(1.0);
+			opacity: 1.0;
+			width: 240px;
+			height: 240px;
+		}
+		.box img:hover{
+			transform: scale(1.2);
+			transition: transform .65s;
+			background-color: white;
+			opacity:0.8!important;
+		}
+
+		.name{
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			text-decoration: none;
+			color:#2C2A29;
+			font-weight: 500;
+			text-transform: capitalize;
+		}
+		.bitton{
+			margin-bottom: 80px;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid #2C2A29;
+			padding: 8px 16px;
+			color: #333;
+			cursor: pointer;
+			font-size: 12px;
+		}
+		.bitton:hover{
+			background-color: #2C2A29;
+			color: #fff;
+			transition: 0.5s ease-in-out;
+		}
+		.pro{
+			padding-top:64px;
+			width: 520px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 120px;
+		}
+		.clearfix{
+			clear: both;
+		}	
+		.footer{
+			background-color: #333333;
+			width: 100%
+			height: 480px;
+			color: #fff;
+		}
+		.foo-1 img{
+			margin-left: 48px;
+			margin-top: 36px;
+			margin-bottom : 6px;
+		}
+		.foo-1 h3{
+			font-size: 28px;
+			margin-top : 6px;
+			margin-bottom: 12px;
+			margin-left: 48px;
+		}
+		.foo-1 h5{
+			font-size: 16px;
+			margin-left: 48px;
+			margin-bottom: 12px;
+			font-weight: 500;
+		}
+		.foo-1 p{
+			margin-left: 48px;
+			font-size: 10px;
+			padding-bottom: 36px;
+		}
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar">
+			<a href="#">
+				<img src="https://i.postimg.cc/cLCWN19h/image.png" width="50px" height="50px" alt="logo"></a>
+
+		<ul class="menu">
+			<li><a href="#">Home</a></li>
+			<li class="about"><a href="#">Discography</a></li>
+		</ul>
+	</div>
+
+	<div class="container">
+		<div class="vivi">
+			<h5>Ryuichi Sakamoto</h5>
+			<h1>Discography</h1>
+		</div>
+
+		<!--pro-1 -->
+
+	<div class="pro">
+		<a href="#" class="link">
+		<div class="box box-1">
+			<img src="https://i.postimg.cc/fysqzHnW/1-async-2017.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">async</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-2">
+			<img src="https://i.postimg.cc/02Yn5Gcr/2-utau-2013.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">UTAU</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-3">
+			<img src="https://i.postimg.cc/cL8s8HtK/2-three-2012.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">Three</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-4">
+			<img src="https://i.postimg.cc/sgNCKRSk/3-flumina-2011.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">flumina</div>
+			<button class="bitton">view more</button>
+		</a>
+		
+
+		<!--pro-2 -->
+
+		
+		<a href="#" class="link">
+		<div class="box box-5">
+			<img src="https://i.postimg.cc/0QpG5Ds9/4-summvs-2011.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">summvs</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-6">
+			<img src="https://i.postimg.cc/xTmxJJ3N/4-playing-the-piano-2009.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">playing the piano</div>
+			<button class="bitton">view more</button>
+		</a>
+
+	
+		<a href="#" class="link">
+		<div class="box box-7">
+			<img src="https://i.postimg.cc/mD8DSg3Q/5-outofnoise-2009.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">out of noise</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-8">
+			<img src="https://i.postimg.cc/gctjXr2p/6-Comica-2005.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">COMICA</div>
+			<button class="bitton">view more</button>
+		</a>
+		
+
+		<!--pro-3 -->
+
+		<a href="#" class="link">
+		<div class="box box-9">
+			<img src="https://i.postimg.cc/Dwk2LGV9/7-chasm-2004.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">chasm</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-10">
+			<img src="https://i.postimg.cc/VsJrFXTv/8-viroon-2002.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">viroon</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-11">
+			<img src="https://i.postimg.cc/RZLN0d3s/9-elephantism-2002.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">elephantism</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-12">
+			<img src="https://i.postimg.cc/J4bhTxQr/10-BTTB-1999.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">BTTB</div>
+			<button class="bitton">view more</button>
+		</a>
+		
+		<!--pro-4 -->
+
+
+		<a href="#" class="link">
+		<div class="box box-13">
+			<img src="https://i.postimg.cc/KzkGtDzy/11-1996.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">1996</div>
+			<button class="bitton">view more</button>
+		</a>
+
+		<a href="#" class="link">
+		<div class="box box-14">
+			<img src="https://i.postimg.cc/RVzSnfxj/12-Smoochy-1995.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">smoochy</div>
+			<button class="bitton">view more</button>
+		</a>	
+
+		<a href="#" class="link">
+		<div class="box box-15">
+			<img src="https://i.postimg.cc/Hn1gXGRQ/13-Sweet-Revenge-1994.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">Sweet Revenge</div>
+			<button class="bitton">view more</button>
+		</a>		
+
+		<a href="#" class="link">
+		<div class="box box-16">
+			<img src="https://i.postimg.cc/28mY5D4Y/14-Heartbeat-sakamoto-1991.jpg" width="304px" height="304px">
+		</div>
+			<div class="name">Heart beat</div>
+			<button class="bitton">view more</button>
+		</a>		
+	</div>
+	<div class="clearfix"></div>
+	</div>
+
+	<div class="footer">
+		<div class="foo-1">
+			<img class="logo" src="https://i.postimg.cc/cLCWN19h/image.png" width="50px" height="50px" alt="logo">
+			<h3>STUDIO SAKAMOTO</h3>
+			<h5>pianist & producer</h5>
+			<p>Copyright © 2020 Studio Sakamoto Corp. All rights reserved.
+			</p>
+		</div>
+
+		<div class="foo-2">
+			
+		</div>
+
+	</div>
+</body>
+</html>
